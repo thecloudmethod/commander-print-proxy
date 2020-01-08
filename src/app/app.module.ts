@@ -9,6 +9,10 @@ import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { WindowService } from './services/window/window.service';
 
+// Modules
+import { AngularMaterialModule } from './modules/angular-material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // For AoT compilation:
 export function getWindow() {
   return window;
@@ -17,6 +21,8 @@ export function getWindow() {
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
+    AngularMaterialModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     DragulaModule.forRoot(),
     // Add .withServerTransition() to support Universal rendering.
@@ -36,6 +42,7 @@ export function getWindow() {
       },
     ]),
     SharedModule,
+    
   ],
   providers: [
     {

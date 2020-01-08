@@ -8,11 +8,15 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UniversalInterceptorService } from './modules/shared/interceptors/universal-interceptor.service';
 import { WindowService } from './services/window/window.service';
 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   imports: [
     // The AppServerModule should import your AppModule followed
     // by the ServerModule from @angular/platform-server.
     AppModule,
+    NoopAnimationsModule,
     ServerModule,
     ServerTransferStateModule,
     ModuleMapLoaderModule // <-- *Important* to have lazy-loaded routes work
@@ -25,6 +29,10 @@ import { WindowService } from './services/window/window.service';
       provide: HTTP_INTERCEPTORS,
       useClass: UniversalInterceptorService,
       multi: true // <-- important (you can have many interceptors)
+    },
+    {
+      provide: 'serverUrl',
+      useValue: 'http://localhost:4001/'
     },
     {
       provide: WindowService,
