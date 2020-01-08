@@ -1,11 +1,11 @@
 {
-  "name": "@thecloudmethod/base-web",
+  "name": "@thecloudmethod/commander-print-proxy",
   "version": "0.1.0",
-  "description": "My web dev starting point based on @kamilmysliwiec/universal-nest + @angular/material",
+  "description": "A RESTful api proxy to generate print files to Bartenders Commander watch folder queue.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thecloudmethod/base-web.git"
+    "url": "https://github.com/thecloudmethod/commander-print-proxy.git"
   },
   "contributors": [
     "Ben Morgan <ben@thecloudmethod.com>"
